@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+        <bean id="life" class="com.lihd.spring.c_life.Life" init-method="initMethod" destroy-method="destroyMethod"/>
+<!--        <bean id="life" class="com.lihd.spring.c_life.Life"/>-->
+
+
+
+
+<!--        添加后置处理器 会对在所有的bean 执行init-method方法前和后都执行重写的方法-->
+        <bean id="myProcessor" class="com.lihd.spring.c_life.MyProcessor"/>
+</beans>

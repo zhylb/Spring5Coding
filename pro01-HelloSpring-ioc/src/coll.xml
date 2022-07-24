@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="coll" class="com.lihd.spring.collection.Coll">
+        <property name="arr">
+            <array>
+                <value>张三</value>
+                <value>李四</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>JAVA</value>
+                <value>Python</value>
+            </list>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="JavaEE" value="javaee"/>
+                <entry key="JavaSE" value="javase"/>
+            </map>
+        </property>
+
+        <property name="set">
+            <set>
+                <ref bean="person1"/>
+                <ref bean="person2"/>
+
+            </set>
+        </property>
+
+        <property name="objMap">
+            <map>
+                <entry key-ref="person1" value-ref="dog1"/>
+                <entry key-ref="person2" value-ref="dog2"/>
+            </map>
+        </property>
+
+
+
+    </bean>
+
+
+    <bean id="person1" class="com.lihd.spring.collection.Person">
+        <property name="name" value="特朗普"/>
+    </bean>
+    <bean id="person2" class="com.lihd.spring.collection.Person">
+        <property name="name" value="拜拉登"/>
+    </bean>
+
+    <bean id="dog1" class="com.lihd.spring.collection.Dog">
+        <property name="name" value="露西"/>
+    </bean>
+
+    <bean id="dog2" class="com.lihd.spring.collection.Dog">
+        <property name="name" value="凯蒂"/>
+    </bean>
+
+
+
+</beans>

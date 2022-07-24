@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+   <util:set id="uset">
+      <value>特朗普</value>
+      <value>希拉里</value>
+   </util:set>
+
+
+   <util:list id="dlist">
+      <bean id="dog1" class="com.lihd.spring.collection.Dog">
+         <property name="name" value="露西"/>
+      </bean>
+
+      <bean id="dog2" class="com.lihd.spring.collection.Dog">
+         <property name="name" value="凯蒂"/>
+      </bean>
+   </util:list>
+
+
+   <bean id="perPet" class="com.lihd.spring.collection.PerPet">
+      <property name="set" ref="uset"/>
+      <property name="list" ref="dlist"/>
+   </bean>
+
+
+
+
+
+</beans>
